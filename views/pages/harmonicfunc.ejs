@@ -1,0 +1,137 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Keys - Chord By Harmonic Function
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/keyfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_harmonicfunc">
+          <fieldset id="keytypeoptions" class="fieldset--solidgold">
+            <legend class="form__legend">Choose Key Type:</legend>        
+            <div class="input__note--orienthorz">
+              <input type="radio" id="major" name="keytype" value="major" />
+              <label class="form__label" for="major">Major</label>
+            </div>
+
+            <div class="input__note--orienthorz">
+              <input type="radio" id="minor" name="keytype" value="minor" />
+              <label class="form__label" for="minor">Minor</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="majorharmonicfunc" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Major Key Chords</legend>
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose Major Key:</legend>
+              <select id="majorkeys" class="form__select form__select--bkgbrownbeige">
+                <%  let labels1 = majorKeyOptions;
+                    let values1 = majorKeyValues;
+                    for ( let i = 0; i < labels1.length; i++ ) {
+                      let selected = (defaultMajorKey === labels1[ i ]) ? 'selected': '';
+                      %><option value="<%= values1[ i ] %>" <%= selected %>><%= labels1[ i ] %></option>
+                <%  } %>
+              </select>
+            </fieldset> 
+
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose Major Chord Harmonic Function:</legend>
+              <select id="chordfunctionmajor" class="form__select form__select--bkgbrownbeige">
+                <%  let labels2 = majorChordFunctionOptions;
+                    let values2 = chordFunctionValues;
+                    for ( let i = 0; i < labels2.length; i++ ) {
+                      let selected = (defaultChordFunction === labels2[ i ]) ? 'selected': '';
+                      %><option value="<%= values2[ i ] %>" <%= selected %>><%= labels2[ i ] %></option>            
+                <%  } %>
+              </select>
+            </fieldset>
+          </fieldset>
+
+          <fieldset id="minorharmonicfunc" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Minor Key Chords</legend>
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose Minor Key:</legend>
+              <select id="minorkeys" class="form__select form__select--bkgbrownbeige">
+                <%  let labels3 = minorKeyOptions;
+                    let values3 = minorKeyValues;
+                    for ( let i = 0; i < labels3.length; i++ ) {
+                      let selected = (defaultMinorKey === labels3[ i ]) ? 'selected': '';
+                      %><option value="<%= values3[ i ] %>" <%= selected %>><%= labels3[ i ] %></option>
+                <%  } %>
+              </select>
+            </fieldset> 
+
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose Minor Chord Harmonic Function:</legend>
+              <select id="chordfunctionminor" class="form__select form__select--bkgbrownbeige">
+                <%  let labels4 = minorChordFunctionOptions;;
+                    let values4 = chordFunctionValues;
+                    for ( let i = 0; i < labels2.length; i++ ) {
+                      let selected = (defaultChordFunction === labels4[ i ]) ? 'selected': '';
+                      %><option value="<%= values4[ i ] %>" <%= selected %>><%= labels4[ i ] %></option>            
+                <%  } %>
+              </select>
+            </fieldset>
+          </fieldset>
+          
+          <div id="action" class="u-margin-top-small u-margin-bottom-small" style="display: none;">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="harmonicfunc">GET CHORD NOTES</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Chord Notes
+          </h2>
+        </div>
+        
+        <div id="chord-notes">           
+          <p>
+            <i>Chord notes will be displayed here</i>
+          </p>
+        </div>
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/harmonicfunc.js"></script>   
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,161 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Chords - Notes In Chord
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/chordfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_notesinchord">
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose a Root Note for the Chord:</legend>
+            <%  let labels1 = chordNoteOptions;
+                let values1 = chordNoteValues;
+                for ( let i = 0; i < labels1.length; i++ ) {
+                  let checked = (chordRootNote === values1[ i ]) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="radio" name="chordroot" value="<%= values1[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="chordroot"><%= labels1[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Chord Type:</legend>
+            <select id="chordtypes" class="form__select form__select--bkgbrownbeige">
+              <%  let labels2 = chordTypeOptions;
+                  let values2 = chordTypeValues;
+                  for ( let i = 0; i < labels2.length; i++ ) {
+                    let selected = (chordType === labels2[ i ]) ? 'selected': '';
+                    %><option value="<%= values2[ i ] %>" <%= selected %>><%= labels2[ i ] %></option>
+              <%  } %>
+            </select>
+          </fieldset>
+
+          <fieldset id="advancedchordoptions" class="fieldset--solidgold">
+            <legend class="form__legend">Advanced Chord Options:</legend>        
+            <div class="input__note--orienthorz">
+              <input type="radio" id="none" name="advancedchord" value="none" checked />
+              <label class="form__label" for="none">None</label>
+            </div>
+
+            <div class="input__note--orienthorz">
+              <input type="radio" id="slash" name="advancedchord" value="slash" />
+              <label class="form__label" for="slash">Slash Chord</label>
+            </div>
+
+            <div class="input__note--orienthorz">
+              <input type="radio" id="poly" name="advancedchord" value="poly" />
+              <label class="form__label" for="poly">Polychord</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="slashchord" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Slash Chord</legend>
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose the Bass Note for the Slash Chord:</legend>
+              <%  let labels3 = chordNoteOptions;
+                  let values3 = chordNoteValues;
+                  for ( let i = 0; i < labels3.length; i++ ) {
+                    let checked = (slashChordBass === values3[ i ]) ? 'checked' : '';
+                    %><div class="input__note--orienthorz">
+                        <input type="radio" name="slashbass" value="<%= values3[ i ] %>" <%= checked %>/>
+                        <label class="form__label" for="slashbass"><%= labels3[ i ] %></label>
+                      </div>
+              <%  } %>
+            </fieldset>
+          </fieldset>
+
+          <fieldset id="polychord" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Polychord</legend>
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose a Root Note for the Second Chord:</legend>
+              <%  let labels4 = chordNoteOptions;
+                  let values4 = chordNoteValues;
+                  for ( let i = 0; i < labels4.length; i++ ) {
+                    let checked = (secondChordRoot === values4[ i ]) ? 'checked' : '';
+                    %><div class="input__note--orienthorz">
+                        <input type="radio" name="secondchordroot" value="<%= values4[ i ] %>" <%= checked %>/>
+                        <label class="form__label" for="secondchordroot"><%= labels4[ i ] %></label>
+                      </div>
+              <%  } %>
+            </fieldset>
+
+            <fieldset class="fieldset--solidgold">
+              <legend class="form__legend">Choose Chord Type for Second Chord:</legend>
+              <select id="secondchordtypes" class="form__select form__select--bkgbrownbeige">
+                <%  let labels5 = chordTypeOptions;
+                    let values5 = chordTypeValues;
+                    for ( let i = 0; i < labels5.length; i++ ) {
+                      let selected = (chordType === labels5[ i ]) ? 'selected': '';
+                      %><option value="<%= values2[ i ] %>" <%= selected %>><%= labels5[ i ] %></option>            
+                <%  } %>
+              </select>
+            </fieldset>
+          </fieldset>
+          
+          <div class="u-margin-top-small u-margin-bottom-small">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="notesinchord">GET CHORD NOTES</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Chord Notes
+          </h2>
+        </div>
+        
+        <div id="chord-notes">           
+          <p>
+            <i>Chord notes will be displayed here</i>
+          </p>
+        </div>
+        
+        <div id="comments">
+          <!--Comments-->
+        </div> 
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/notesinchord.js"></script>   
+<%- include('../includes/end.ejs') %>

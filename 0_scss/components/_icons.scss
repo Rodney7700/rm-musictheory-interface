@@ -1,0 +1,41 @@
+// Icons
+.nav-icon__outer-container {
+  box-sizing: border-box;
+  width: 8rem;
+  height: 8.4rem;
+  margin: 0;
+  background: hsla(0,100%,100%,0.3);
+  padding: 1.35rem 2rem 2rem 2rem;
+  text-align: left;
+  border-radius: 2rem;
+  box-shadow: inset 1px 1px 1px hsla(0,0%,0%,0.09);
+}
+
+.nav-icon__inner-container {
+  width: 4rem;
+}
+
+.nav-icon {
+  box-sizing: content-box;
+  width: 100%;
+  background-size: cover;
+  height: 0;
+  padding: 0; /* reset */
+  padding-bottom: 151%; /* 100% * 313 / 207 = 151% */
+
+  &--keys {
+    background-image: url('../img/keys_symbol.svg');
+  }
+  
+  &--intervals {
+    background-image: url('../img/intervals_symbol.svg');
+  }
+  
+  &--chords {
+    background-image: url('../img/chords_symbol.svg');
+  }
+  
+  &--scales {
+    background-image: url('../img/scales_symbol.svg');
+  }
+}

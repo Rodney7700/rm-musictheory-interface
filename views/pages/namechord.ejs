@@ -1,0 +1,110 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Chords - Name A Chord
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/chordfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_namechord">
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose All Notes for the Chord:</legend>
+            <%  let labels = chordNoteOptions;
+                let values = chordNoteValues;
+                for ( let i = 0; i < labels.length; i++ ) {
+                  let checked = (checkedNotes.includes(values[ i ])) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="checkbox" name="note" value="<%= values[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="note"><%= labels[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Enharmonic Preference:</legend>
+              <div class="input__note--orienthorz">
+                <input type="radio" name="enharmonic" id="sharp" value="sharp" checked />
+                <label class="form__label" for="sharp">(&#9839;) Sharps</label>
+              </div>
+
+              <div class="input__note--orienthorz">
+                <input type="radio" name="enharmonic" id="flat" value="flat" />
+                <label class="form__label" for="flat">(&#9837;) Flats</label>
+              </div>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Additional Options:</legend>
+        
+            <div class="input__note--orienthorz">
+              <input type="checkbox" name="use_shorthand" id="use_shorthand" value="yes" />
+              <label class="form__label" for="shorthand">Use Shorthand Notation</label>
+            </div>
+
+            <div class="input__note--orienthorz">
+              <input type="checkbox" name="omit_inversions" id="omit_inversions" value="yes" />
+              <label class="form__label" for="shorthand">Omit Chord Inversions</label>
+            </div>
+          </fieldset>
+          
+          <div class="u-margin-top-small u-margin-bottom-small">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="namechord">GET CHORD NAME(S)</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Chord Names
+          </h2>
+        </div>
+        
+        <div id="chord-names">           
+          <p>
+            <i>Chord names will be displayed here</i>
+          </p>
+        </div>  
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/namechord.js"></script>   
+<%- include('../includes/end.ejs') %>

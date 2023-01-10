@@ -1,0 +1,17 @@
+:root {
+  --color-primary: hsla(182,31%,68%,1);
+  /* color contrasts */
+  --color-background: hsla(0,0%,100%,1);
+  --color-contrast-lower: hsla(0,0%,95%,1);
+  --color-contrast-low: hsla(240,1%,83%,1);
+  --color-contrast-medium: hsla(240,1%,48%,1);
+  --color-contrast-high: hsla(240,4%,20%,1);
+  --color-contrast-higher: hsla(0,0%,0%,1);
+  /* text color */
+  --color-text-black: hsla(0,0%,11%,1);
+  --color-text-white: hsla(0,100%,100%,1);
+  --color-text-darkbrown: hsla(7,74%,13%,1);
+  /* accent colors */
+  --color-accent-gold: hsla(42,83%,49%,1);
+  --color-accent-brownbeige: hsla(42,12%,62%,1);
+}

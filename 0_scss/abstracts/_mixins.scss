@@ -1,0 +1,18 @@
+@mixin grid-nav {
+  justify-content: center;
+  margin: 0 auto;
+  padding: .8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsla(0,0%,88%,1);
+}
+
+@mixin font-main-reg-600 {
+  font-family: var(--font-main-regular);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}

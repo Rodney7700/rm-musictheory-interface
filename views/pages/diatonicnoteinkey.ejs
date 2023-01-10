@@ -1,0 +1,136 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Intervals - Diatonic Note In Key
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/intervalfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_diatonicnoteinkey">
+          <fieldset id="keytypeoptions" class="fieldset--solidgold">
+            <legend class="form__legend">Choose Key Type:</legend>        
+            <div class="input__note--orienthorz">
+              <input type="radio" id="major" name="keytype" value="major" />
+              <label class="form__label" for="major">Major</label>
+            </div>
+
+            <div class="input__note--orienthorz">
+              <input type="radio" id="minor" name="keytype" value="minor" />
+              <label class="form__label" for="minor">Minor</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="majorkeyoptionsdisplay" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Choose Major Key:</legend>
+            <select id="majorkeys" class="form__select form__select--bkgbrownbeige">
+              <%  let labels1 = majorKeyOptions;
+                  let values1 = majorKeyValues;
+                  for ( let i = 0; i < labels1.length; i++ ) {
+                    let selected = (defaultMajorKey === labels1[ i ]) ? 'selected': '';
+                  %><option value="<%= values1[ i ] %>" <%= selected %>><%= labels1[ i ] %></option>
+              <%  } %>
+            </select>
+          </fieldset>
+          
+          <fieldset id="minorkeyoptionsdisplay" class="fieldset--solidgold" style="display: none;">
+          <legend class="form__legend">Choose Minor Key:</legend>
+            <select id="minorkeys" class="form__select form__select--bkgbrownbeige">
+              <%  let labels2 = minorKeyOptions;
+                  let values2 = minorKeyValues;
+                  for ( let i = 0; i < labels2.length; i++ ) {
+                    let selected = (defaultMinorKey === labels2[ i ]) ? 'selected': '';
+                    %><option value="<%= values2[ i ] %>" <%= selected %>><%= labels2[ i ] %></option>
+              <%  } %>
+            </select>
+          </fieldset>
+         
+          <fieldset id="noteoptionsdisplay" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Choose a Note:</legend>
+            <%  let labels3 = noteOptions;
+                let values3 = noteValues;
+                for ( let i = 0; i < labels3.length; i++ ) {
+                  let checked = (defaultNote === values3[ i ]) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="radio" name="note" value="<%= values3[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="note"><%= labels3[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset id="diatonicintervalsoptionsdisplay" class="fieldset--solidgold" style="display: none;">
+            <legend class="form__legend">Choose Diatonic Interval:</legend>
+            <select id="diatonicintervals" class="form__select form__select--bkgbrownbeige">
+              <%  let labels4 = diatonicFunctionOptions;
+                  let values4 = diatonicFunctionValues;
+                  for ( let i = 0; i < labels4.length; i++ ) {
+                    let selected = (defaultIntervalName === labels4[ i ]) ? 'selected': '';
+                    %><option value="<%= values4[ i ] %>" <%= selected %>><%= labels4[ i ] %></option>            
+              <%  } %>
+            </select>
+          </fieldset>
+
+          <div id="action" class="u-margin-top-small u-margin-bottom-small" style="display: none;">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="diatonicnoteinkey">GET DIATONIC NOTE</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Diatonic Note In Key
+          </h2>
+        </div>
+        
+        <div id="interval-note">           
+          <p>
+            <i>Diatonic note in the key at the selected interval will be displayed here</i>
+          </p>
+        </div>
+
+        <div id="comments">
+          <!--Comments-->
+        </div> 
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/diatonicnoteinkey.js"></script>   
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,176 @@
+@use '../abstracts/mixins' as mx;
+
+// Grid Layout
+.grid__nav-home {
+  @include mx.grid-nav;
+  max-width: 35rem;
+  grid: 'icon-keys button-keys' 8.4rem
+        'icon-intervals button-intervals' 8.4rem
+        'icon-chords button-chords' 8.4rem
+        'icon-scales button-scales' 8.4rem
+        / 8rem 25rem;
+}
+
+.grid__nav-keyfunctions {
+  @include mx.grid-nav;
+  max-width: 80rem;
+  grid: 'icon-keys button-notesinkey' 8.4rem
+        'icon-blank button-relativeminorkey' 8.4rem
+        'icon-blank button-relativemajorkey' 8.4rem
+        'icon-blank button-harmonicfunc' 8.4rem
+        'icon-blank button-previous' 8.4rem
+        / 8rem 40rem;
+}
+
+.grid__nav-intervalfunctions {
+  @include mx.grid-nav;
+  max-width: 80rem;
+  grid: 'icon-intervals button-diatonicnoteinkey' 8.4rem
+        'icon-blank button-noteatinterval' 8.4rem
+        'icon-blank button-intervalbetween' 8.4rem
+        'icon-blank button-previous' 8.4rem
+        / 8rem 40rem;
+}
+
+.grid__nav-chordfunctions {
+  @include mx.grid-nav;
+  max-width: 80rem;
+  grid: 'icon-chords button-notesinchord' 8.4rem
+        'icon-blank button-namechord' 8.4rem
+        'icon-blank button-polychord' 8.4rem
+        'icon-blank button-previous' 8.4rem
+        / 8rem 40rem;
+}
+
+.grid__nav-scalefunctions {
+  @include mx.grid-nav;
+  max-width: 80rem;
+  grid: 'icon-scales button-notesinscale' 8.4rem
+        'icon-blank button-namescale' 8.4rem
+        'icon-blank button-previous' 8.4rem
+        / 8rem 40rem;
+}
+
+.item__nav-icon {
+  &-blank {
+    grid-area: icon-blank;
+    justify-self: center;
+    align-self: center;    
+  }
+
+  &-keys {
+    grid-area: icon-keys;
+    justify-self: center;
+    align-self: center;    
+  }
+
+  &-intervals {
+    grid-area: icon-intervals;
+    justify-self: center;
+    align-self: center;    
+  }
+
+  &-chords {
+    grid-area: icon-chords; 
+    justify-self: center;
+    align-self: center;     
+  }
+
+  &-scales {
+    grid-area: icon-scales;
+    justify-self: center;
+    align-self: center;      
+  }
+}
+
+.item__nav-button {  
+  &-keys {
+    grid-area: button-keys;
+    justify-self: start;
+    align-self: start;    
+  }
+
+  // Key functions
+  &-notesinkey {
+    grid-area: button-notesinkey;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-relativeminorkey {
+    grid-area: button-relativeminorkey;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-relativemajorkey {
+    grid-area: button-relativemajorkey;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-harmonicfunc {
+    grid-area: button-harmonicfunc;
+    justify-self: start;
+    align-self: start;        
+  }
+  //
+
+  &-intervals {
+    grid-area: button-intervals;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-chords {
+    grid-area: button-chords;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  // Chord functions
+  &-notesinchord {
+    grid-area: button-notesinchord;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-namechord {
+    grid-area: button-namechord;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-polychord {
+    grid-area: button-polychord;
+    justify-self: start;
+    align-self: start;        
+  }  
+  // 
+
+  &-scales {
+    grid-area: button-scales;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  // Scale functions
+  &-notesinscale {
+    grid-area: button-notesinscale;
+    justify-self: start;
+    align-self: start;        
+  }
+
+  &-namescale {
+    grid-area: button-namescale;
+    justify-self: start;
+    align-self: start;        
+  }
+  //
+
+  &-previous {
+    grid-area: button-previous;
+    justify-self: start;
+    align-self: start;    
+  }
+}

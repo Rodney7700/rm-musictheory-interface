@@ -1,0 +1,654 @@
+@charset "UTF-8";
+:root {
+  --color-primary: hsla(182,31%,68%,1);
+  /* color contrasts */
+  --color-background: hsla(0,0%,100%,1);
+  --color-contrast-lower: hsla(0,0%,95%,1);
+  --color-contrast-low: hsla(240,1%,83%,1);
+  --color-contrast-medium: hsla(240,1%,48%,1);
+  --color-contrast-high: hsla(240,4%,20%,1);
+  --color-contrast-higher: hsla(0,0%,0%,1);
+  /* text color */
+  --color-text-black: hsla(0,0%,11%,1);
+  --color-text-white: hsla(0,100%,100%,1);
+  --color-text-darkbrown: hsla(7,74%,13%,1);
+  /* accent colors */
+  --color-accent-gold: hsla(42,83%,49%,1);
+  --color-accent-brownbeige: hsla(42,12%,62%,1);
+}
+
+@font-face {
+  font-family: "MontserratBlack";
+  src: url("../fonts/MontserratBlack.eot");
+  src: url("../fonts/MontserratBlack.eot") format("embedded-opentype"), url("../fonts/MontserratBlack.woff2") format("woff2"), url("../fonts/MontserratBlack.woff") format("woff"), url("../fonts/MontserratBlack.ttf") format("truetype"), url("../fonts/MontserratBlack.svg#MontserratBlack") format("svg");
+}
+@font-face {
+  font-family: "MontserratBlackItalic";
+  src: url("../fonts/MontserratBlackItalic.eot");
+  src: url("../fonts/MontserratBlackItalic.eot") format("embedded-opentype"), url("../fonts/MontserratBlackItalic.woff2") format("woff2"), url("../fonts/MontserratBlackItalic.woff") format("woff"), url("../fonts/MontserratBlackItalic.ttf") format("truetype"), url("../fonts/MontserratBlackItalic.svg#MontserratBlackItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: url("../fonts/MontserratBold.eot");
+  src: url("../fonts/MontserratBold.eot") format("embedded-opentype"), url("../fonts/MontserratBold.woff2") format("woff2"), url("../fonts/MontserratBold.woff") format("woff"), url("../fonts/MontserratBold.ttf") format("truetype"), url("../fonts/MontserratBold.svg#MontserratBold") format("svg");
+}
+@font-face {
+  font-family: "MontserratBoldItalic";
+  src: url("../fonts/MontserratBoldItalic.eot");
+  src: url("../fonts/MontserratBoldItalic.eot") format("embedded-opentype"), url("../fonts/MontserratBoldItalic.woff2") format("woff2"), url("../fonts/MontserratBoldItalic.woff") format("woff"), url("../fonts/MontserratBoldItalic.ttf") format("truetype"), url("../fonts/MontserratBoldItalic.svg#MontserratBoldItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratExtraBold";
+  src: url("../fonts/MontserratExtraBold.eot");
+  src: url("../fonts/MontserratExtraBold.eot") format("embedded-opentype"), url("../fonts/MontserratExtraBold.woff2") format("woff2"), url("../fonts/MontserratExtraBold.woff") format("woff"), url("../fonts/MontserratExtraBold.ttf") format("truetype"), url("../fonts/MontserratExtraBold.svg#MontserratExtraBold") format("svg");
+}
+@font-face {
+  font-family: "MontserratExtraBoldItalic";
+  src: url("../fonts/MontserratExtraBoldItalic.eot");
+  src: url("../fonts/MontserratExtraBoldItalic.eot") format("embedded-opentype"), url("../fonts/MontserratExtraBoldItalic.woff2") format("woff2"), url("../fonts/MontserratExtraBoldItalic.woff") format("woff"), url("../fonts/MontserratExtraBoldItalic.ttf") format("truetype"), url("../fonts/MontserratExtraBoldItalic.svg#MontserratExtraBoldItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratExtraLight";
+  src: url("../fonts/MontserratExtraLight.eot");
+  src: url("../fonts/MontserratExtraLight.eot") format("embedded-opentype"), url("../fonts/MontserratExtraLight.woff2") format("woff2"), url("../fonts/MontserratExtraLight.woff") format("woff"), url("../fonts/MontserratExtraLight.ttf") format("truetype"), url("../fonts/MontserratExtraLight.svg#MontserratExtraLight") format("svg");
+}
+@font-face {
+  font-family: "MontserratExtraLightItalic";
+  src: url("../fonts/MontserratExtraLightItalic.eot");
+  src: url("../fonts/MontserratExtraLightItalic.eot") format("embedded-opentype"), url("../fonts/MontserratExtraLightItalic.woff2") format("woff2"), url("../fonts/MontserratExtraLightItalic.woff") format("woff"), url("../fonts/MontserratExtraLightItalic.ttf") format("truetype"), url("../fonts/MontserratExtraLightItalic.svg#MontserratExtraLightItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratMedium";
+  src: url("../fonts/MontserratMedium.eot");
+  src: url("../fonts/MontserratMedium.eot") format("embedded-opentype"), url("../fonts/MontserratMedium.woff2") format("woff2"), url("../fonts/MontserratMedium.woff") format("woff"), url("../fonts/MontserratMedium.ttf") format("truetype"), url("../fonts/MontserratMedium.svg#MontserratMedium") format("svg");
+}
+@font-face {
+  font-family: "MontserratMediumItalic";
+  src: url("../fonts/MontserratMediumItalic.eot");
+  src: url("../fonts/MontserratMediumItalic.eot") format("embedded-opentype"), url("../fonts/MontserratMediumItalic.woff2") format("woff2"), url("../fonts/MontserratMediumItalic.woff") format("woff"), url("../fonts/MontserratMediumItalic.ttf") format("truetype"), url("../fonts/MontserratMediumItalic.svg#MontserratMediumItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("../fonts/MontserratRegular.eot");
+  src: url("../fonts/MontserratRegular.eot") format("embedded-opentype"), url("../fonts/MontserratRegular.woff2") format("woff2"), url("../fonts/MontserratRegular.woff") format("woff"), url("../fonts/MontserratRegular.ttf") format("truetype"), url("../fonts/MontserratRegular.svg#MontserratRegular") format("svg");
+}
+@font-face {
+  font-family: "MontserratSemiBold";
+  src: url("../fonts/MontserratSemiBold.eot");
+  src: url("../fonts/MontserratSemiBold.eot") format("embedded-opentype"), url("../fonts/MontserratSemiBold.woff2") format("woff2"), url("../fonts/MontserratSemiBold.woff") format("woff"), url("../fonts/MontserratSemiBold.ttf") format("truetype"), url("../fonts/MontserratSemiBold.svg#MontserratSemiBold") format("svg");
+}
+@font-face {
+  font-family: "MontserratSemiBoldItalic";
+  src: url("../fonts/MontserratSemiBoldItalic.eot");
+  src: url("../fonts/MontserratSemiBoldItalic.eot") format("embedded-opentype"), url("../fonts/MontserratSemiBoldItalic.woff2") format("woff2"), url("../fonts/MontserratSemiBoldItalic.woff") format("woff"), url("../fonts/MontserratSemiBoldItalic.ttf") format("truetype"), url("../fonts/MontserratSemiBoldItalic.svg#MontserratSemiBoldItalic") format("svg");
+}
+@font-face {
+  font-family: "MontserratThin";
+  src: url("../fonts/MontserratThin.eot");
+  src: url("../fonts/MontserratThin.eot") format("e../fonts/variable/mbedded-opentype"), url("../fonts/MontserratThin.woff2") format("woff2"), url("../fonts/MontserratThin.woff") format("woff"), url("../fonts/MontserratThin.ttf") format("truetype"), url("../fonts/MontserratThin.svg#MontserratThin") format("svg");
+}
+@font-face {
+  font-family: "MontserratThinItalic";
+  src: url("../fonts/MontserratThinItalic.eot");
+  src: url("../fonts/MontserratThinItalic.eot") format("embedded-opentype"), url("../fonts/MontserratThinItalic.woff2") format("woff2"), url("../fonts/MontserratThinItalic.woff") format("woff"), url("../fonts/MontserratThinItalic.ttf") format("truetype"), url("../fonts/MontserratThinItalic.svg#MontserratThinItalic") format("svg");
+}
+@font-face {
+  font-family: "MusiSync";
+  src: url("../fonts/MusiSync.eot");
+  src: url("../fonts/MusiSync.eot") format("embedded-opentype"), url("../fonts/MusiSync.woff2") format("woff2"), url("../fonts/MusiSync.woff") format("woff"), url("../fonts/MusiSync.ttf") format("truetype"), url("../fonts/MusiSync.svg#MusiSync") format("svg");
+}
+:root {
+  --font-main-black: "MontserratBlack", sans-serif;
+  --font-main-black-italic: "MontserratBlackItalic", sans-serif;
+  --font-main-bold: "MontserratBold", sans-serif;
+  --font-main-bold-italic: "MontserratBoldItalic", sans-serif;
+  --font-main-extra-bold: "MontserratExtraBold", sans-serif;
+  --font-main-extra-bold-italic: "MontserratExtraBoldItalic", sans-serif;
+  --font-main-extra-light: "MontserratExtraLight", sans-serif;
+  --font-main-extra-light-italic: "MontserratExtraLightItalic" , sans-serif;
+  --font-main-light: "MontserratLight", sans-serif;
+  --font-main-light-italic: "MontserratLightItalic", sans-serif;
+  --font-main-medium: "MontserratMedium", sans-serif;
+  --font-main-medium-italic: "MontserratMediumItalic", sans-serif;
+  --font-main-regular: "MontserratRegular", sans-serif;
+  --font-main-semibold: "MontserratSemiBold", sans-serif;
+  --font-main-semibold-italic: "MontserratSemiBoldItalic", sans-serif;
+  --font-main-thin: "MontserratThin", sans-serif;
+  --font-main-thin-italic: "MontserratThinItalic", sans-serif;
+  --font-musisync: "MusiSync";
+  --font-default-size: 1.6rem;
+}
+
+:root {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 1rem;
+  padding: 0;
+  background: var(--color-background) url("../img/bg.jpg") repeat top left;
+}
+
+.heading-01 {
+  margin-block-start: 0.67rem;
+  margin-block-end: 0.67rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.heading-02 {
+  margin-block-start: 0.83rem;
+  margin-block-end: 0.83rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.p__main {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.theme-sep01 {
+  height: 0.7rem;
+  width: 102.25%;
+}
+
+.heading-01 {
+  font-family: var(--font-main-bold);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+.heading-02 {
+  font-family: var(--font-main-bold);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+.heading-03 {
+  font-family: var(--font-main-bold);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+p {
+  font-family: var(--font-main-regular);
+  color: var(--color-text-black);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.p__footnote {
+  font-family: var(--font-main-regular);
+  color: var(--color-text-black);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.form__legend {
+  font-family: var(--font-main-regular);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--color-text-darkbrown);
+}
+
+.form__label,
+.form__select,
+.li__divider {
+  font-family: var(--font-main-regular);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: hsl(196deg, 88%, 23%);
+}
+
+.li__divider {
+  margin: 1.25rem 0 0 2.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.li__name,
+.li__note {
+  font-family: var(--font-main-regular);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: hsl(25deg, 71%, 31%);
+}
+
+.li__name::marker {
+  color: hsl(42deg, 83%, 49%);
+  content: "» ";
+  font-size: 2rem;
+}
+
+.li__note {
+  margin-right: 4rem;
+}
+.li__note:last-child {
+  margin: 0;
+}
+
+.li__note::marker {
+  font-family: var(--font-musisync);
+  font-weight: 600;
+  color: hsl(42deg, 83%, 49%);
+  content: "È ";
+  font-size: 1.8rem;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-top-small {
+  margin-top: 2rem !important;
+}
+
+.u-margin-top-medium {
+  margin-top: 4rem !important;
+}
+
+.u-margin-bottom-big {
+  margin-top: 8rem !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.u-margin-left-tiny {
+  margin-left: 1rem !important;
+}
+
+.u-margin-left-small {
+  margin-left: 2rem !important;
+}
+
+.u-margin-left-medium {
+  margin-left: 4rem !important;
+}
+
+.u-margin-left-big {
+  margin-left: 8rem !important;
+}
+
+.u-width-base {
+  width: 100rem;
+}
+
+.u-width-nav-previous {
+  max-width: 100rem;
+}
+
+.u-display-flex {
+  display: flex;
+}
+
+.div__a-btn {
+  margin: 0;
+  background: hsla(0deg, 100%, 100%, 0.3);
+  padding: 1.5rem 2rem 1.6rem 2rem;
+  text-align: left;
+  border-radius: 2rem;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem hsla(0deg, 0%, 0%, 0.09);
+}
+
+.p__a-btn {
+  display: block;
+  padding: 0 0 0.5rem;
+}
+
+.a-btn01 {
+  background-color: hsl(182deg, 27%, 66%);
+  font-family: var(--font-main-semibold);
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: hsl(0deg, 100%, 100%);
+  position: relative;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-left: solid 0.1rem hsl(182deg, 38%, 66%);
+  margin-left: 3.5rem;
+  background-image: linear-gradient(to top, hsl(182deg, 31%, 48%), hsl(182deg, 31%, 68%));
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.5rem 0 0 hsl(190deg, 33%, 37%), 0 1rem 0.5rem hsl(0deg, 0%, 60%);
+}
+.a-btn01:active {
+  top: 0.3rem;
+  background-image: linear-gradient(to top, hsl(182deg, 31%, 68%), hsl(182deg, 31%, 48%));
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.2rem 0 0 hsl(190deg, 33%, 37%), 0 0.5rem 0.3rem hsl(0deg, 0%, 60%);
+}
+.a-btn01::before {
+  background-color: hsl(182deg, 4%, 49%);
+  content: "*";
+  text-align: center;
+  width: 3.5rem;
+  max-height: 3rem;
+  height: 100%;
+  position: absolute;
+  display: block;
+  padding-top: 0.9rem;
+  top: 0;
+  left: -3.6rem;
+  font-family: var(--font-main-semibold);
+  font-size: 1.5rem;
+  color: hsl(41deg, 100%, 70%);
+  text-shadow: 0.1rem 0.1rem 0 hsl(182deg, 88%, 18%);
+  border-right: solid 0.1rem hsl(182deg, 88%, 18%);
+  background-image: linear-gradient(to top, hsl(182deg, 16%, 41%), hsl(182deg, 24%, 53%));
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.5rem 0 0 hsl(182deg, 90%, 12%), 0 1rem 0.5rem hsl(0deg, 0%, 60%);
+}
+.a-btn01:active::before {
+  top: -0.3rem;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.5rem 0 0 hsl(182deg, 90%, 12%), 0.1rem 0.1rem 0 0 hsl(182deg, 92%, 20%), 0.2rem 0.2rem 0 0 hsl(182deg, 92%, 20%), 0.2rem 0.5rem 0 0 hsl(182deg, 92%, 20%), 0.6rem 0.4rem 0.2rem hsl(182deg, 85%, 29%), 0 1rem 0.5rem hsl(0deg, 0%, 60%);
+}
+
+.a-btn01--previous::before {
+  content: "<";
+  color: hsl(196deg, 68%, 74%);
+}
+.a-btn01--one::before {
+  content: "1";
+}
+.a-btn01--two::before {
+  content: "2";
+}
+.a-btn01--three::before {
+  content: "3";
+}
+.a-btn01--four::before {
+  content: "4";
+}
+.a-btn01--five::before {
+  content: "5";
+}
+
+.a-btn02 {
+  background-color: hsl(182deg, 27%, 66%);
+  font-family: var(--font-main-semibold);
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: hsl(0deg, 100%, 100%);
+  position: relative;
+  padding: 1rem 5rem 1rem 2rem;
+  cursor: pointer;
+  border-left: solid 0.1rem hsl(182deg, 38%, 66%);
+  background-image: linear-gradient(to top, hsl(182deg, 31%, 48%), hsl(182deg, 31%, 68%));
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.5rem 0 0 hsl(190deg, 33%, 37%), 0 1rem 0.5rem hsl(0deg, 0%, 60%);
+}
+.a-btn02:active {
+  top: 0.3rem;
+  background-image: linear-gradient(to top, hsl(182deg, 31%, 68%), hsl(182deg, 31%, 48%));
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.2rem 0 0 hsl(190deg, 33%, 37%), 0 0.5rem 0.3rem hsl(0deg, 0%, 60%);
+}
+.a-btn02::before {
+  background-color: hsl(182deg, 31%, 38%);
+  background-image: url("../img/a-btn02-symbol.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  margin-top: -0.9rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.1rem 0 hsl(182deg, 31%, 68%);
+}
+.a-btn02:active::before {
+  top: 50%;
+  margin-top: -1.2rem;
+  box-shadow: inset 0 0.1rem 0 hsl(182deg, 38%, 66%), 0 0.3rem 0 hsl(182deg, 90%, 12%), 0 0.6rem 0.3rem hsl(182deg, 85%, 29%);
+}
+
+.fieldset--solidgold {
+  border-style: solid;
+  border-color: var(--color-accent-gold);
+  margin-bottom: 1rem;
+}
+
+.form__select--bkgbrownbeige {
+  background-color: var(--color-accent-brownbeige);
+  padding: 0.5rem 0.5rem;
+}
+
+.input__note--orienthorz {
+  margin-right: 1rem;
+  display: inline-block;
+}
+.input__note--orienthorz:last-child {
+  margin: 0;
+}
+
+.nav-icon__outer-container {
+  box-sizing: border-box;
+  width: 8rem;
+  height: 8.4rem;
+  margin: 0;
+  background: hsla(0deg, 100%, 100%, 0.3);
+  padding: 1.35rem 2rem 2rem 2rem;
+  text-align: left;
+  border-radius: 2rem;
+  box-shadow: inset 1px 1px 1px hsla(0deg, 0%, 0%, 0.09);
+}
+
+.nav-icon__inner-container {
+  width: 4rem;
+}
+
+.nav-icon {
+  box-sizing: content-box;
+  width: 100%;
+  background-size: cover;
+  height: 0;
+  padding: 0; /* reset */
+  padding-bottom: 151%; /* 100% * 313 / 207 = 151% */
+}
+.nav-icon--keys {
+  background-image: url("../img/keys_symbol.svg");
+}
+.nav-icon--intervals {
+  background-image: url("../img/intervals_symbol.svg");
+}
+.nav-icon--chords {
+  background-image: url("../img/chords_symbol.svg");
+}
+.nav-icon--scales {
+  background-image: url("../img/scales_symbol.svg");
+}
+
+.footer {
+  color: var(--color-text-darkbrown);
+}
+
+.grid__nav-home {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsl(0deg, 0%, 88%);
+  max-width: 35rem;
+  grid: "icon-keys button-keys" 8.4rem "icon-intervals button-intervals" 8.4rem "icon-chords button-chords" 8.4rem "icon-scales button-scales" 8.4rem/8rem 25rem;
+}
+
+.grid__nav-keyfunctions {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsl(0deg, 0%, 88%);
+  max-width: 80rem;
+  grid: "icon-keys button-notesinkey" 8.4rem "icon-blank button-relativeminorkey" 8.4rem "icon-blank button-relativemajorkey" 8.4rem "icon-blank button-harmonicfunc" 8.4rem "icon-blank button-previous" 8.4rem/8rem 40rem;
+}
+
+.grid__nav-intervalfunctions {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsl(0deg, 0%, 88%);
+  max-width: 80rem;
+  grid: "icon-intervals button-diatonicnoteinkey" 8.4rem "icon-blank button-noteatinterval" 8.4rem "icon-blank button-intervalbetween" 8.4rem "icon-blank button-previous" 8.4rem/8rem 40rem;
+}
+
+.grid__nav-chordfunctions {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsl(0deg, 0%, 88%);
+  max-width: 80rem;
+  grid: "icon-chords button-notesinchord" 8.4rem "icon-blank button-namechord" 8.4rem "icon-blank button-polychord" 8.4rem "icon-blank button-previous" 8.4rem/8rem 40rem;
+}
+
+.grid__nav-scalefunctions {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.8rem 0 1rem 0;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-items: start;
+  align-items: start;
+  background-color: hsl(0deg, 0%, 88%);
+  max-width: 80rem;
+  grid: "icon-scales button-notesinscale" 8.4rem "icon-blank button-namescale" 8.4rem "icon-blank button-previous" 8.4rem/8rem 40rem;
+}
+
+.item__nav-icon-blank {
+  grid-area: icon-blank;
+  justify-self: center;
+  align-self: center;
+}
+.item__nav-icon-keys {
+  grid-area: icon-keys;
+  justify-self: center;
+  align-self: center;
+}
+.item__nav-icon-intervals {
+  grid-area: icon-intervals;
+  justify-self: center;
+  align-self: center;
+}
+.item__nav-icon-chords {
+  grid-area: icon-chords;
+  justify-self: center;
+  align-self: center;
+}
+.item__nav-icon-scales {
+  grid-area: icon-scales;
+  justify-self: center;
+  align-self: center;
+}
+
+.item__nav-button-keys {
+  grid-area: button-keys;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-notesinkey {
+  grid-area: button-notesinkey;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-relativeminorkey {
+  grid-area: button-relativeminorkey;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-relativemajorkey {
+  grid-area: button-relativemajorkey;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-harmonicfunc {
+  grid-area: button-harmonicfunc;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-intervals {
+  grid-area: button-intervals;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-chords {
+  grid-area: button-chords;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-notesinchord {
+  grid-area: button-notesinchord;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-namechord {
+  grid-area: button-namechord;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-polychord {
+  grid-area: button-polychord;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-scales {
+  grid-area: button-scales;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-notesinscale {
+  grid-area: button-notesinscale;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-namescale {
+  grid-area: button-namescale;
+  justify-self: start;
+  align-self: start;
+}
+.item__nav-button-previous {
+  grid-area: button-previous;
+  justify-self: start;
+  align-self: start;
+}
+
+/*# sourceMappingURL=main.css.map */

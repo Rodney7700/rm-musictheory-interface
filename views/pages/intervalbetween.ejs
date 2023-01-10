@@ -1,0 +1,105 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Intervals - Interval Between Notes
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/intervalfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_intervalbetween">
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose First Note:</legend>
+            <%  let labels1 = noteOptions;
+                let values1 = noteValues;
+                for ( let i = 0; i < labels1.length; i++ ) {
+                  let checked = (defaultNote === values1[ i ]) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="radio" name="note1" value="<%= values1[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="note1"><%= labels1[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Second Note:</legend>
+            <%  let labels2 = noteOptions;
+                let values2 = noteValues;
+                for ( let i = 0; i < labels2.length; i++ ) {
+                  let checked = (defaultNote === values2[ i ]) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="radio" name="note2" value="<%= values2[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="note2"><%= labels2[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Additional Options:</legend>
+        
+            <div class="input__note--orienthorz">
+              <input type="checkbox" name="use_shorthand" id="use_shorthand" value="yes" />
+              <label class="form__label" for="shorthand">Use Shorthand Notation</label>
+            </div>
+          </fieldset>
+          
+          <div class="u-margin-top-small u-margin-bottom-small">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="intervalbetween">GET INTERVAL</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Interval
+          </h2>
+        </div>
+        
+        <div id="interval-name">           
+          <p>
+            <i>The interval from the first note to the second note will be displayed here</i>
+          </p>
+        </div>  
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/intervalbetween.js"></script>   
+<%- include('../includes/end.ejs') %>

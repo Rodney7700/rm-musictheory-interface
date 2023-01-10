@@ -1,0 +1,20 @@
+// Form layout01 elements
+.fieldset--solidgold {
+  border-style: solid;
+  border-color: var(--color-accent-gold);
+  margin-bottom: 1rem;
+}
+
+.form__select--bkgbrownbeige {
+  background-color: var(--color-accent-brownbeige);
+  padding: 0.5rem 0.5rem;
+}
+
+.input__note--orienthorz {
+  margin-right: 1rem;
+  display: inline-block;
+
+  &:last-child {
+    margin: 0;
+  }
+}

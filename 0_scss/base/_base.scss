@@ -1,0 +1,38 @@
+:root {
+  box-sizing: border-box;
+  font-size: 62.5%; // Based on a default font size of 16px; 1 rem = ( XX px / 16 px ) %; so 1 rem = 62.5% (10 px) here
+}
+
+body { 
+  margin: 0 1rem;
+  padding: 0; 
+  background: var(--color-background) url('../img/bg.jpg') repeat top left;
+}
+
+// Text elements
+.heading-01 {
+  margin-block-start: 0.67rem;
+  margin-block-end: 0.67rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.heading-02 {
+  margin-block-start: 0.83rem;
+  margin-block-end: 0.83rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.p__main {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+// Image elements
+.theme-sep01 {
+  height: 0.7rem;
+  width: 102.25%;
+}

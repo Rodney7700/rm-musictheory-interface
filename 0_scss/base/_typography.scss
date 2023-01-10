@@ -1,0 +1,83 @@
+@use '../abstracts/mixins' as mx;
+
+.heading-01 {
+  font-family: var(--font-main-bold);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+.heading-02 {
+  font-family: var(--font-main-bold);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+.heading-03 {
+  font-family: var(--font-main-bold);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text-darkbrown);
+}
+
+p {
+  font-family: var(--font-main-regular);
+  color: var(--color-text-black);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.p__footnote {
+  font-family: var(--font-main-regular);
+  color: var(--color-text-black);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.form__legend {
+  @include mx.font-main-reg-600;
+  color: var(--color-text-darkbrown);
+}
+
+.form__label,
+.form__select,
+.li__divider {
+  @include mx.font-main-reg-600;
+  color: hsla(196,88%,23%,1);
+}
+
+.li__divider {
+  margin: 1.25rem 0 0 2.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.li__name,
+.li__note {
+  @include mx.font-main-reg-600;
+  color: hsla(25,71%,31%,1);
+}
+
+.li__name::marker {
+  color: hsla(42,83%,49%,1);
+  content: '» ';
+  font-size: 2rem;
+}
+
+.li__note {
+  margin-right: 4rem;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.li__note::marker {
+  font-family: var(--font-musisync);
+  font-weight: 600;
+  color: hsla(42,83%,49%,1);
+  content: 'È ';
+  font-size: 1.8rem;
+}
+

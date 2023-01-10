@@ -1,0 +1,86 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory
+      </h1>
+      <h2 class="heading-02">
+        Keys - Relative Minor Key
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/keyfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_relativeminorkey">                    
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Major Key:</legend>
+            <select id="majorkeys" class="form__select form__select--bkgbrownbeige">
+              <%  let labels = majorKeyOptions;
+                  let values = majorKeyValues;
+                  for ( let i = 0; i < labels.length; i++ ) {
+                    let selected = (defaultMajorKey === labels[ i ]) ? 'selected': '';
+                    %><option value="<%= values[ i ] %>" <%= selected %>><%= labels[ i ] %></option>
+              <%  } %>
+            </select>
+          </fieldset>          
+          
+          <div class="u-margin-top-small u-margin-bottom-small">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="relativeminorkey">GET RELATIVE MINOR KEY</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Relative Minor Key
+          </h2>
+        </div>
+        
+        <div id="minor-key">           
+          <p>
+            <i>Relative Minor Key will be displayed here</i>
+          </p>
+        </div>
+        
+        <div id="comments">           
+          <!--Comments-->
+        </div> 
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/relativeminorkey.js"></script>   
+<%- include('../includes/end.ejs') %>

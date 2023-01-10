@@ -1,0 +1,108 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="u-width-base">
+      <h1 class="heading-01">
+        Music Theory 
+      </h1>
+      <h2 class="heading-02">
+        Intervals - Note At Interval
+      </h2>
+      <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+    </header>
+
+    <main class="u-width-base">
+
+      <nav class="u-margin-top-small u-margin-bottom-small">
+        <p class="p__a-btn">
+          <a href="/intervalfunctions" class="a-btn01 a-btn01--previous">PREVIOUS</a>
+        </p>          
+      </nav>
+
+      <section class="u-margin-top-medium u-margin-bottom-small">
+
+        <h2 class="heading-02">
+          Parameters
+        </h2>
+          
+        <form id="form_noteatinterval">
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose a Root Note:</legend>
+            <%  let labels1 = noteOptions;
+                let values1 = noteValues;
+                for ( let i = 0; i < labels1.length; i++ ) {
+                  let checked = (defaultNote === values1[ i ]) ? 'checked' : '';
+                  %><div class="input__note--orienthorz">
+                      <input type="radio" name="rootnote" value="<%= values1[ i ] %>" <%= checked %>/>
+                      <label class="form__label" for="rootnote"><%= labels1[ i ] %></label>
+                    </div>
+            <%  } %>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Interval Direction:</legend>
+              <div class="input__note--orienthorz">
+                <input type="radio" name="direction" id="up" value="up" checked />
+                <label class="form__label" for="up">Up from Root Note</label>
+              </div>
+
+              <div class="input__note--orienthorz">
+                <input type="radio" name="direction" id="down" value="down" />
+                <label class="form__label" for="down">Down from Root Note</label>
+              </div>
+          </fieldset>
+
+          <fieldset class="fieldset--solidgold">
+            <legend class="form__legend">Choose Diatonic Interval:</legend>
+            <select id="intervaloptions" class="form__select form__select--bkgbrownbeige">
+              <%  let labels2 = intervalFunctionOptions;
+                  let values2 = intervalFunctionValues;
+                  for ( let i = 0; i < labels2.length; i++ ) {
+                    let selected = (defaultIntervalName === labels2[ i ]) ? 'selected': '';
+                    %><option value="<%= values2[ i ] %>" <%= selected %>><%= labels2[ i ] %></option>            
+              <%  } %>
+            </select>
+          </fieldset>
+
+          <div class="u-margin-top-small u-margin-bottom-small">
+            <p class="p__a-btn">
+              <a class="a-btn02" id="noteatinterval">GET NOTE AT INTERVAL</a>
+            </p>
+          </div>
+                    
+        </form>           
+        
+        <img src="/img/theme-sep01_symbol.svg" alt="" class="theme-sep01">
+
+      </section> 
+
+      <section>
+
+        <div class="u-margin-top-small">           
+          <h2 class="heading-02">
+            Note At Interval
+          </h2>
+        </div>
+        
+        <div id="interval-note">           
+          <p>
+            <i>The note at the interval from the Root Note will be displayed here</i>
+          </p>
+        </div>
+
+      </section>
+          
+    </main> 
+
+    <footer class="u-width-base">
+      <hr>
+        
+      <p class="p__footnote">
+        Copyright &#169 2022 Rodney Martin
+      </p>
+    </footer>
+
+    <script src="/js/noteatinterval.js"></script>   
+<%- include('../includes/end.ejs') %>
